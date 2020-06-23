@@ -1,7 +1,7 @@
-
 ########## ------------ Key bindings ------------ ##########
 
-NUMBER_OF_SIRENS   = 90
+NUMBER_OF_SIRENS   = 99
+WAITING_TIME       = 130
 STOP_SCRIPT        = 'ESCAPE'
 ACTION_UP          = 'w'
 ACTION_LEFT        = 'a'
@@ -37,8 +37,7 @@ wait_1_s = Command(ACTION_SELECT, 1, True)
 select = Command(ACTION_SELECT, 0.4)
 menu = Command(ACTION_MENU, 1)
 menu_back = Command(ACTION_RETURN, 0.4)
-wait_battle = Command(ACTION_LEFT, 180, True)
-run_right = Command(ACTION_RIGHT, 3)
+wait_battle = Command(ACTION_LEFT, WAITING_TIME, True)
 go_down = Command(ACTION_DOWN, 0.4)
 go_up = Command(ACTION_UP, 0.4)
 commands = [wait_1_s, menu, go_down, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, wait_1_s, menu, wait_1_s, select, wait_1_s, select, wait_battle, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, wait_1_s]
