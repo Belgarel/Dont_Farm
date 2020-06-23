@@ -1,7 +1,7 @@
 ########## ------------ Key bindings ------------ ##########
 
 NUMBER_OF_SIRENS   = 99
-WAITING_TIME       = 130
+BATTLE_TIME       = 130
 STOP_SCRIPT        = 'ESCAPE'
 ACTION_UP          = 'w'
 ACTION_LEFT        = 'a'
@@ -33,14 +33,16 @@ class Command:                                                                  
 
 ########## ----------     Actions     ----------- ##########
 ########## -- Scenario to hunt weakest summons -- ##########
-wait_1_s = Command(ACTION_SELECT, 1, True)
-select = Command(ACTION_SELECT, 0.4)
+wait_short = Command(ACTION_SELECT, 0.5, True)
+select = Command(ACTION_SELECT, 0.5)
 menu = Command(ACTION_MENU, 1)
-menu_back = Command(ACTION_RETURN, 0.4)
-wait_battle = Command(ACTION_LEFT, WAITING_TIME, True)
-go_down = Command(ACTION_DOWN, 0.4)
-go_up = Command(ACTION_UP, 0.4)
-commands = [wait_1_s, menu, go_down, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, menu_back, wait_1_s, wait_1_s, menu, wait_1_s, select, wait_1_s, select, wait_battle, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, select, wait_1_s, wait_1_s]
+menu_back = Command(ACTION_RETURN, 0.5)
+wait_battle = Command(ACTION_LEFT, BATTLE_TIME, True)
+go_down = Command(ACTION_DOWN, 0.5)
+commands_heal_cecil = [wait_short, menu, go_down, wait_short, select, wait_short, select, wait_short, select, wait_short, select, wait_short, select, wait_short, menu_back, wait_short, menu_back, wait_short, menu_back, wait_short, menu_back, wait_short, menu_back, wait_short, menu_back, wait_short]
+commands_use_siren = [wait_short, menu, wait_short, select, wait_short, select]
+commands_do_battle = [wait_battle, select, wait_short, select, wait_short, select, wait_short, select, wait_short, select, wait_short, wait_short]
+commands = commands_heal_cecil + commands_use_siren + commands_do_battle
 
 ########################## Do not concern yourself with this part. ###########################
 ##############################################################################################
