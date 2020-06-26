@@ -30,7 +30,7 @@ class Command:                                                                  
 
 ########## ----------     Actions     ----------- ##########
 ########## -- Scenario to hunt weakest summons -- ##########
-confirm_win = Command(ACTION_SELECT, 1)
+confirm_win = Command(ACTION_SELECT, 0.5)
 run_left = Command(ACTION_LEFT, 3)
 run_right = Command(ACTION_RIGHT, 3)
 stop = Command(ACTION_UP, 1, True)
